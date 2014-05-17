@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <base href="/tippspiel/">
+  <title>Mobile Angular UI Examples</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+  <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="mobile-ui/dist/css/mobile-angular-ui-base.min.css">
+  <link rel="stylesheet" href="mobile-ui/dist/css/mobile-angular-ui-desktop.min.css">
+  <link rel="stylesheet" type="text/css" href="tippspiel.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-touch.min.js"></script>
+  <script src="mobile-ui/dist/js/mobile-angular-ui.min.js"></script>
+  
+</head>
+
+<body>
+
+<div class="app">
+  <div class="navbar navbar-app navbar-absolute-bottom">
+    <div class="btn-group justified">
+      <a href="groups.html" class="btn btn-navbar">Gruppen</a>
+      <a href="games.html" class="btn btn-navbar">Tipps</a>
+      <a href="" class="btn btn-navbar">Home</a>
+      <a href="" class="btn btn-navbar">Settings</a>
+    </div>
+
+  </div>
+
+  <div class="app-body">
+    <div class="scrollable-content">
+      <div class="list-group">
+        <div class="list-group-item">
+          Bevorstehende Spiele:<br>
+          <div class="list-group">
+            <div class="list-group-item second-item">Deutschland : Ghana, 20:15 Uhr   <a class="btn btn-default">Tippen</a></div>
+            <div class="list-group-item second-item">England : Spanien, 23:00 Uhr    <a class="btn btn-default">Tippen</a></div>
+          </div>
+        </div>
+
+        <div class="list-group-item">
+          Beendete Spiele:<br>
+          <div class="list-group">
+            <div class="list-group-item second-item">Deutschland : Ghana, 2:1, Tipp: 3:1,  1 Punkt   </div>
+            <div class="list-group-item second-item">England : Spanien, 2:2, Tipp 1:2, 0 Punkte  </div>
+          </div>
+        </div>
+
+        <div class="list-group-item">
+          Tippgruppe Fiducia:<br>
+          <div class="list-group">
+            <div class="list-grup-item second-item">1.Sepp    16 Punkte</div>
+            <div class="list-grup-item second-item"><b>2.Alois   14 Punkte</b></div>
+            <div class="list-grup-item second-item">3.Lukas    9 Punkte</div>
+          </div>
+        </div>
+
+        <div class="list-group-item">
+          Tippgruppe SAP:<br>
+          <div class="list-group">
+            <div class="list-grup-item second-item"><b>1.Alois   14 Punkte</b></div>
+            <div class="list-grup-item second-item">2.Simon   12 Punkte</div>
+            <div class="list-grup-item second-item">3.Max   9 Punkte</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

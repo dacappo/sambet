@@ -1,0 +1,9 @@
+.app
+{
+	background-color: white;
+}
+
+.list-group-item .second-item
+{
+	border-bottom: 0px;
+}
