@@ -38,67 +38,43 @@ server.del({path : PATH +'/:userId' , version: '0.0.1'} ,deleteUser);
 
 function findAllUsers(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
-
-    jobs.find().limit(20).sort({postedOn : -1} , function(err , success){
-        console.log('Response success '+success);
-        console.log('Response error '+err);
-        if(success){
-            res.send(200 , success);
-            return next();
-        }else{
-            return next(err);
-        }
-
-    });
-
+    console.log("Not yet implemented!");
 }
 
 function findUser(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
-    jobs.findOne({_id:mongojs.ObjectId(req.params.jobId)} , function(err , success){
-        console.log('Response success '+success);
-        console.log('Response error '+err);
-        if(success){
-            res.send(200 , success);
-            return next();
-        }
-        return next(err);
-    })
+    User
+        .find({ where: { username: req.params.username} })
+        .complete(function(err, user) {
+            if (!!err) {
+                console.log('An error occurred while searching for the user:', err)
+            } else if (!user) {
+                console.log('No user has been found.')
+            } else {
+                console.log('Hello ' + user.username + '!')
+                console.log('All attributes of john:', user.values)
+            }
+        })
 }
 
 function postNewUser(req , res , next){
-    var job = {};
-    job.title = req.params.title;
-    job.description = req.params.description;
-    job.location = req.params.location;
-    job.postedOn = new Date();
-
     res.setHeader('Access-Control-Allow-Origin','*');
-
-    jobs.save(job , function(err , success){
-        console.log('Response success '+success);
-        console.log('Response error '+err);
-        if(success){
-            res.send(201 , job);
-            return next();
-        }else{
-            return next(err);
-        }
-    });
+    User
+        .create({
+            username: req.params.username,
+            email: req.params.email
+        })
+        .complete(function(err, user) {
+            if (!!err) {
+                console.log('The instance has not been saved:', err)
+            } else {
+                console.log('We have a persisted instance now')
+            }
+        })
 }
 
 function deleteUser(req , res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
-    jobs.remove({_id:mongojs.ObjectId(req.params.jobId)} , function(err , success){
-        console.log('Response success '+success);
-        console.log('Response error '+err);
-        if(success){
-            res.send(204);
-            return next();
-        } else{
-            return next(err);
-        }
-    })
-
+    console.log("Not yet implemented!");
 }
 

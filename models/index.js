@@ -47,5 +47,4 @@ if (!global.hasOwnProperty('db')) {
      global.db.User.hasMany(global.db.SomethingElse)
      */
 }
-
 module.exports = global.db
