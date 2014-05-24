@@ -1,0 +1,12 @@
+DROP table groupmembers;
+DROP table tips;
+DROP table games;
+DROP table teams;
+DROP table groups;
+DROP table users;
+CREATE TABLE users (id INT NOT NULL AUTO_INCREMENT, username varchar(20) unique, imea varchar(20) UNIQUE, email varchar(20), PRIMARY KEY(id));
+CREATE TABLE groups (id INT NOT NULL AUTO_INCREMENT, name varchar(20) unique, created_by int, FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE CASCADE, PRIMARY KEY(id));
+CREATE TABLE groupmembers (id INT NOT NULL AUTO_INCREMENT, user_id int, group_id int, PRIMARY KEY(id), FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE, FOREIGN KEY (group_id) REFERENCES groups(id) ON DELETE CASCADE);
+CREATE TABLE teams (id INT NOT NULL AUTO_INCREMENT, name varchar(20), PRIMARY KEY(id));
+CREATE TABLE games (id INT NOT NULL AUTO_INCREMENT, timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP, result varchar(20), home_team int, away_team int,  PRIMARY KEY(id), FOREIGN KEY (home_team) REFERENCES teams(id) ON DELETE CASCADE, FOREIGN KEY (away_team) REFERENCES teams(id) ON DELETE CASCADE);
+CREATE TABLE tips (id INT NOT NULL AUTO_INCREMENT, user_id int, game_id int, FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE, FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE CASCADE, value varchar(20) unique, points int, PRIMARY KEY(id));
