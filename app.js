@@ -37,7 +37,7 @@ server.get('/', function(req, res) {
 
 var PATH = '/users';
 server.get({path : PATH , version : '0.0.1'} , findAllUsers);
-server.get({path : PATH +'/:userId' , version : '0.0.1'} , findUser);
+server.get({path : PATH +'/:username' , version : '0.0.1'} , findUser);
 server.post({path : PATH , version: '0.0.1'} ,postNewUser);
 server.del({path : PATH +'/:userId' , version: '0.0.1'} ,deleteUser);
 
@@ -48,6 +48,7 @@ function findAllUsers(req, res , next){
 
 function findUser(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
+    console.log(req.params.username);
     User
         .find({ where: { username: req.params.username} })
         .complete(function(err, user) {
