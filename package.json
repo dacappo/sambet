@@ -4,6 +4,8 @@
   "description": "Tip App for the WM14",
   "main": "app.js",
   "dependencies": {
+    "logfmt": "^1.1.2",
+    "mysql": "^2.3.0",
     "restify": "^2.8.1"
   },
   "devDependencies": {},

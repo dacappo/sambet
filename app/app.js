@@ -3,20 +3,44 @@
  */
 
 var restify = require('restify');
+var logfmt = require("logfmt");
+var mysql = require('mysql');
 
-var ip_addr = '127.0.0.1';
-var port    =  '8080';
+var HOST;
+var USERNAME;
+var PASSWORD;
+var DATABASE;
+
+var connect_string_splitted = process.env.DATABASE_URL.split(":");
+USERNAME = connect_string_splitted[1].split("//")[1];
+PASSWORD = connect_string_splitted[2].split("@")[0];
+HOST = connect_string_splitted[2].split("@")[1].split("/")[0];
+DATABASE = connect_string_splitted[2].split("@")[1].split("/")[1].split("?")[0];
+
+var connection = mysql.createConnection({
+    host: HOST,
+    user: USERNAME,
+    password: PASSWORD,
+    database: DATABASE
+});
+
+var port = Number(process.env.PORT || 5000);
 
 var server = restify.createServer({
     name : "myapp"
 });
 
+server.use(logfmt.requestLogger());
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 server.use(restify.CORS());
 
-server.listen(port ,ip_addr, function(){
-    console.log('%s listening at %s ', server.name , server.url);
+server.listen(port, function() {
+    console.log("Listening on " + port);
+});
+
+server.get('/', function(req, res) {
+    res.send('Hello World!');
 });
 
 var PATH = '/users';
