@@ -6,7 +6,9 @@
   "dependencies": {
     "logfmt": "^1.1.2",
     "mysql": "^2.3.0",
-    "restify": "^2.8.1"
+    "pg": "^3.2.0",
+    "restify": "^2.8.1",
+    "sequelize": "^1.7.5"
   },
   "devDependencies": {},
   "scripts": {
