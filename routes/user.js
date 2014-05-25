@@ -66,5 +66,19 @@ exports.update = function(req, res , next){
 
 exports.delete = function(req , res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
-    console.log("Not yet implemented!");
+    db.User
+        .find({ where: { id: req.header('id')} })
+        .complete(function(err, user) {
+            if (!!err) {
+                console.log('An error occurred while searching for the user:', err)
+                res.send("An error occurred while searching for the user:", err);
+            } else if (!user) {
+                console.log('No user has been found.')
+                res.send("No user has been found.");
+            } else {
+                user.destroy().success(function () {
+                    res.send("User successfully deleted!");
+                })
+            }
+        })
 }
