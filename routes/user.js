@@ -5,10 +5,11 @@ var db = require('../models')
 
 exports.create = function(req, res) {
     res.setHeader('Access-Control-Allow-Origin','*');
+    console.log("username");
     db.User
         .create({
-            username: req.params.username,
-            email: req.params.email
+            username: req.param('username'),
+            email: req.param('email')
         })
         .complete(function(err, user) {
             if (!!err) {
