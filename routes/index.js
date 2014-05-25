@@ -3,12 +3,12 @@
  */
 var db = require('../models')
 
-//exports.index = function(req, res){
-//    db.User.findAll()
-//        .success(function(users) {
-//            res.send({
-//                title: 'All Users',
-//                users: users
-//            })
-//        })
-//}
+exports.index = function(req, res){
+    db.User.findAll()
+        .success(function(users) {
+            res.send({
+                title: 'All Users',
+                users: users
+            })
+        })
+}
