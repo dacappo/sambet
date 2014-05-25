@@ -49,6 +49,7 @@ function findAllUsers(req, res , next){
 function findUser(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
     console.log(req.params.username);
+
     db.User
         .find({ where: { username: req.params.username} })
         .complete(function(err, user) {
