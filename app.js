@@ -74,10 +74,13 @@ function postNewUser(req , res , next){
         .complete(function(err, user) {
             if (!!err) {
                 console.log('The instance has not been saved:', err)
+                res.send({message: "error"});
             } else {
                 console.log('We have a persisted instance now')
+                res.send({message: "User created!"});
             }
         })
+
 }
 
 function deleteUser(req , res , next){

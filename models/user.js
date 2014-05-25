@@ -13,7 +13,6 @@ module.exports = function(sequelize, DataTypes) {
 //            validate: {
 //                isEmail: true
 //            }
-        },
-        test: DataTypes.STRING
+        }
     })
 }
