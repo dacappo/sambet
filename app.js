@@ -36,7 +36,8 @@ server.get('/', function(req, res) {
 });
 
 //User Paths
-server.get({path: 'users' , version : '0.0.1'} , routes.index);
-server.get({path: 'users/find' , version : '0.0.1'} , user.findUser);
+//server.get({path: 'users' , version : '0.0.1'} , routes.index); TODO: default behaviour
+server.get({path: 'users/find' , version : '0.0.1'} , user.find);
 server.post({path: 'users/create' , version: '0.0.1'} , user.create);
-server.del({path: 'users/delete' , version: '0.0.1'} , user.deleteUser);
+server.post({path: 'users/update' , version: '0.0.1'} , user.update);
+server.del({path: 'users/delete' , version: '0.0.1'} , user.delete);
