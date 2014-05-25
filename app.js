@@ -38,5 +38,5 @@ server.get('/', function(req, res) {
 //User Paths
 server.get({path: 'users' , version : '0.0.1'} , routes.index);
 server.get({path: 'users/:username' , version : '0.0.1'} , routes.index); //TODO
-server.post({path: 'users/create' , version: '0.0.1'} , user.create());
+server.post({path: 'users/create' , version: '0.0.1'} , user.create);
 server.del({path: 'users/:userId' , version: '0.0.1'} , routes.index); //TODO
