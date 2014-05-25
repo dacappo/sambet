@@ -49,7 +49,7 @@ function findAllUsers(req, res , next){
 function findUser(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
     console.log(req.params.username);
-    User
+    db.User
         .find({ where: { username: req.params.username} })
         .complete(function(err, user) {
             if (!!err) {
@@ -65,7 +65,7 @@ function findUser(req, res , next){
 
 function postNewUser(req , res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
-    User
+    db.User
         .create({
             username: req.params.username,
             email: req.params.email
