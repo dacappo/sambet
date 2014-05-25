@@ -8,10 +8,6 @@ module.exports = function(sequelize, DataTypes) {
             type     : DataTypes.STRING,
             allowNull: false
         }
-    }, {
-        associate : function(models){
-            Group.hasOne(models.User, { foreignKey: 'created_by'})
-        }
     });
 
     return Group;

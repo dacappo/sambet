@@ -43,6 +43,7 @@ if (!global.hasOwnProperty('db')) {
         // add your other models here
     }
 
+    global.db.Group.hasOne(global.db.User, { foreignKey: 'created_by'});
     /*
      Associations can be defined here. E.g. like this:
      global.db.User.hasMany(global.db.SomethingElse)
