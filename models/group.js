@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
         }
     }, {
         associate : function(models){
-            Group.hasOne(models.User)
+            Group.hasOne(models.User, { foreignKey: 'created_by'})
         }
     });
 
