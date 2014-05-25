@@ -27,9 +27,9 @@ exports.create = function(req, res) {
     console.log(req.params.username);
     db.User
         .create({
-            username: req.params.username,
-            email: req.params.email,
-            imea: req.params.imea
+            username: req.header('username'),
+            email: req.header('email'),
+            imea: req.header('imea')
         })
         .complete(function(err, user) {
             if (!!err) {
@@ -55,8 +55,8 @@ exports.update = function(req, res , next){
                 res.send("No user has been found.");
             } else {
                 user.updateAttributes({
-                    username: req.params.username,
-                    email: req.params.email
+                    username: req.header('username'),
+                    email: req.header('email')
                 }).success(function(){
                         res.send("User successfully updated");
                 })
