@@ -30,7 +30,7 @@ exports.findAll = function(req, res , next){
 exports.findUser = function(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
     db.User
-        .find({ where: { username: req.params.username} })
+        .find({ where: { username: req.header('username')} })
         .complete(function(err, user) {
             if (!!err) {
                 console.log('An error occurred while searching for the user:', err)
