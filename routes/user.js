@@ -22,15 +22,13 @@ exports.create = function(req, res) {
         })
 }
 
-function findAllUsers(req, res , next){
+exports.findAll = function(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
     console.log("Not yet implemented!");
 }
 
-function findUser(req, res , next){
+exports.findUser = function(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
-    console.log(req.params.username);
-
     db.User
         .find({ where: { username: req.params.username} })
         .complete(function(err, user) {
@@ -45,26 +43,7 @@ function findUser(req, res , next){
         })
 }
 
-function postNewUser(req , res , next){
-    res.setHeader('Access-Control-Allow-Origin','*');
-    db.User
-        .create({
-            username: req.params.username,
-            email: req.params.email
-        })
-        .complete(function(err, user) {
-            if (!!err) {
-                console.log('The instance has not been saved:', err)
-                res.send({message: "error"});
-            } else {
-                console.log('We have a persisted instance now')
-                res.send({message: "User created!"});
-            }
-        })
-
-}
-
-function deleteUser(req , res , next){
+exports.deleteUser = function(req , res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
     console.log("Not yet implemented!");
 }
