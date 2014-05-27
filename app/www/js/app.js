@@ -3,66 +3,74 @@ angular.module('sambet', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('tabs', {
-      url: "/tab",
+    .state('eventmenu', {
+      url: "/event",
       abstract: true,
-      templateUrl: "tabs.html"
+      templateUrl: "event-menu.html"
     })
-    .state('tabs.home', {
+    .state('eventmenu.home', {
       url: "/home",
       views: {
-        'home-tab': {
-          templateUrl: "home.html",
-          controller: 'HomeTabCtrl'
-        }
+          'menuContent':{
+              templateUrl: "home.html"
+          }
       }
     })
-    .state('tabs.facts', {
-      url: "/facts",
-      views: {
-        'home-tab': {
-          templateUrl: "facts.html"
-        }
-      }
-    })
-    .state('tabs.facts2', {
-      url: "/facts2",
-      views: {
-        'home-tab': {
-          templateUrl: "facts2.html"
-        }
-      }
-    })
-    .state('tabs.about', {
+
+    .state('eventmenu.about', {
       url: "/about",
       views: {
-        'about-tab': {
-          templateUrl: "about.html"
-        }
+          'menuContent':{
+              templateUrl: "about.html"
+          }
       }
     })
-    .state('tabs.navstack', {
-      url: "/navstack",
-      views: {
-        'about-tab': {
-          templateUrl: "nav-stack.html"
-        }
-      }
-    })
-    .state('tabs.contact', {
+
+      .state('eventmenu.groups', {
+          url: "/groups",
+          views: {
+              'menuContent':{
+                  templateUrl: "groups.html"
+              }
+          }
+      })
+
+      .state('eventmenu.tips', {
+          url: "/tips",
+          views: {
+              'menuContent':{
+                  templateUrl: "tips.html"
+              }
+          }
+      })
+
+      .state('eventmenu.settings', {
+          url: "/settings",
+          views: {
+              'menuContent':{
+                  templateUrl: "settings.html"
+              }
+          }
+      })
+
+    .state('eventmenu.contact', {
       url: "/contact",
       views: {
-        'contact-tab': {
-          templateUrl: "contact.html"
-        }
+          'menuContent':{
+              templateUrl: "contact.html"
+          }
       }
     });
 
 
-   $urlRouterProvider.otherwise("/tab/home");
+   $urlRouterProvider.otherwise("/event/home");
 
 })
 
-.controller('HomeTabCtrl', function($scope) {
-  console.log('HomeTabCtrl');
+.controller('MainCtrl', function($scope, $ionicSideMenuDelegate)
+{
+  $scope.toogleLeft = function()
+  {
+      $ionicSideMenuDelegate.toogleLeft();
+  }
 });
