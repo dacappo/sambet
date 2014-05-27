@@ -9,6 +9,34 @@
 
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+    <style>
+        #nextGame
+        {
+            border-top: 1px solid slategray;
+            border-bottom: 1px solid slategray;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 10px;
+
+        }
+
+        #groupName
+        {
+            margin-bottom: 0px;
+        }
+
+        .line
+        {
+           border: 1px solid gainsboro;
+        }
+
+        .points
+        {
+            border-left: 1px solid gainsboro;
+        }
+
+    </style>
+
     
     <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
     <script src="cordova.js"></script>
@@ -19,52 +47,68 @@
 
   <body ng-app="sambet">
 
-    <!-- Standard markup -->
-    <ion-nav-bar class="nav-title-slide-ios7 bar-balanced">
-      <ion-nav-back-button class="button-icon ion-arrow-left-c">
-      </ion-nav-back-button>
-    </ion-nav-bar>
-             
-    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+    <div ng-controller="MainCtrl">
+        <ion-nav-view></ion-nav-view>
+    </div>
 
 
+    <script id="event-menu.html" type="text/ng-template">
 
+      <ion-side-menus>
+          <ion-side-menu-content>
+              <ion-nav-bar class="bar-balanced">
+                  <ion-nav-back-button class="button-icon ion-arrow-left-c">
+                  </ion-nav-back-button>
+              </ion-nav-bar>
+              <ion-nav-buttons side="left">
+                  <button class="button button-icon button-clear ion-navicon" ng-click="toogleLeft()">
 
-    <script id="tabs.html" type="text/ng-template">
-      <ion-tabs class="tabs-icon-top tabs-balanced">
+                  </button>
+              </ion-nav-buttons>
+              <ion-nav-view name="menuContent"></ion-nav-view>
+          </ion-side-menu-content>
 
-        <ion-tab title="Home" icon="ion-home" href="#/tab/home">
-          <ion-nav-view name="home-tab"></ion-nav-view>
-        </ion-tab>
+          <ion-side-menu side="left" width="myWidthValue + 140">
+            <ion-header-bar class="bar-balanced">
+                <h1 class="title">Sambet</h1>
+            </ion-header-bar>
+                <ion-content>
+                    <ul class="list">
+                        <a href="#/event/home" class="item">Home</a>
+                        <a href="#/event/groups" class="item">Groups</a>
+                        <a href="#/event/tips" class="item">Tips</a>
+                        <a href="#/event/settings" class="item">Settings</a>
+                        <a href="#/event/about" class="item">About</a>
+                        <a href="#/event/contact" class="item">Contact</a>
+                    </ul>
+                </ion-content>
 
-        <ion-tab title="About" icon="ion-ios7-information" href="#/tab/about">
-          <ion-nav-view name="about-tab"></ion-nav-view>
-        </ion-tab>
+          </ion-side-menu>
 
-        <ion-tab title="Contact" icon="ion-ios7-world" ui-sref="tabs.contact">
-          <ion-nav-view name="contact-tab"></ion-nav-view>
-        </ion-tab>
-
-      </ion-tabs>
-
+      </ion-side-menus>
 
     </script>
 
     <script id="home.html" type="text/ng-template">
       <ion-view title="Home">
-        <ion-content class="padding">
-          <button class="button button-small button-full button-light"><i class="icon ion-calendar"></i> Next Games</button>
+        <ion-content padding ="true">
+            <div class="row">
+                <div class="col col-90" id="nextGame">
+                    <i class="icon ion-calendar"></i> Next Games
+                </div>
+            </div>
+
         <!-- Game title -->
         <div class="card">
           <div class="tabs item item-divider">
             <a class="tab-item">
-              <img src="img/flag/Germany.png" style="margin: 8px;"></img>
+              <img src="img/flag/Germany.png" style="margin: 8px;"/>
             </a>
             <a class="tab-item">
               <span>GER - ENG</span>
             </a>
             <a class="tab-item">
-              <img src="img/flag/England.png" style="margin: 8px;"></img>
+              <img src="img/flag/England.png" style="margin: 8px;"/>
             </a>
           </div>
 
@@ -97,58 +141,84 @@
 
     </script>
 
-    <script id="facts.html" type="text/ng-template">
-      <ion-view title="Facts" class="padding">
-        <ion-content>
-          <p>Banging your head against a wall uses 150 calories an hour.</p>
-          <p>Dogs have four toes on their hind feet, and five on their front feet.</p>
-          <p>The ant can lift 50 times its own weight, can pull 30 times its own weight and always falls over on its right side when intoxicated.</p>
-          <p>A cockroach will live nine days without it's head, before it starves to death.</p>
-          <p>Polar bears are left handed.</p>
-          <p>
-            <a class="button icon ion-home" href="#/tab/home"> Home</a>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>
-          </p>
-        </ion-content>
-      </ion-view>
-    </script>
-
-    <script id="facts2.html" type="text/ng-template">
-      <ion-view title="Also Factual">
-        <ion-content class="padding">
-          <p>111,111,111 x 111,111,111 = 12,345,678,987,654,321</p>
-          <p>1 in every 4 Americans has appeared on T.V.</p>
-          <p>11% of the world is left-handed.</p>
-          <p>1 in 8 Americans has worked at a McDonalds restaurant.</p>
-          <p>$283,200 is the absolute highest amount of money you can win on Jeopardy.</p>
-          <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are present and don't die throughout the movie.</p>
-          <p>
-            <a class="button icon ion-home" href="#/tab/home"> Home</a>
-            <a class="button icon ion-chevron-left" href="#/tab/facts"> Scientific Facts</a>
-          </p>
-        </ion-content>
-      </ion-view>
-    </script>
-
     <script id="about.html" type="text/ng-template">
       <ion-view title="About">
-        <ion-content class="padding">
+        <ion-content padding="true">
           <h3>Create hybrid mobile apps with the web technologies you love.</h3>
           <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building highly interactive apps.</p>
           <p>Built with Sass and optimized for AngularJS.</p>
           <p>
-            <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
+
           </p>
         </ion-content>
       </ion-view>
     </script>
 
-    <script id="nav-stack.html" type="text/ng-template">
-      <ion-view title="Tab Nav Stack">
-        <ion-content class="padding">
-          <p><img src="http://ionicframework.com/img/diagrams/tabs-nav-stack.png" style="width:100%"></p>
-        </ion-content>
-      </ion-view>
+
+    <script id="groups.html" type="text/ng-template">
+        <ion-view title="Groups">
+            <ion-content padding="true">
+                <div class="card">
+                    <div class="row item item-divider">
+                        <div class="col" id="nextGame">
+                            <p id="groupName">Name Gruppe 1</p>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <div class="col col-75">Xaver</div>
+                        <div class="col points">15 Punkte</div>
+                    </div>
+                    <div class="row line">
+                        <div class="col col-75">Patrick</div>
+                        <div class="col points">14 Punkte</div>
+                    </div>
+                    <div class="row line">
+                        <div class="col col-75">Lukas</div>
+                        <div class="col points">12 Punkte</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="row item item-divider">
+                        <div class="col" id="nextGame">
+                            <p id="groupName">Name Gruppe 1</p>
+                        </div>
+                    </div>
+                    <div class="row line">
+                        <div class="col col-75">Xaver</div>
+                        <div class="col points">15 Punkte</div>
+                    </div>
+                    <div class="row line">
+                        <div class="col col-75">Patrick</div>
+                        <div class="col points">14 Punkte</div>
+                    </div>
+                    <div class="row line">
+                        <div class="col col-75">Lukas</div>
+                        <div class="col points">12 Punkte</div>
+                    </div>
+                </div>
+
+
+
+
+            </ion-content>
+        </ion-view>
+    </script>
+
+    <script id="tips.html" type="text/ng-template">
+        <ion-view title="Tips">
+            <ion-content padding="true">
+                <p>Tipps:</p>
+            </ion-content>
+        </ion-view>
+    </script>
+
+    <script id="settings.html" type="text/ng-template">
+        <ion-view title="Settings">
+            <ion-content padding="true">
+                <p>Username ändern</p>
+            </ion-content>
+        </ion-view>
     </script>
 
     <script id="contact.html" type="text/ng-template">
