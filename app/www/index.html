@@ -37,6 +37,22 @@
 
         }
 
+        a.item {
+            background-color: #222;
+            color: white;
+            border-width: 0px;
+        }
+
+        a.item:hover {
+            background-color: #000;
+            color: white;
+            border-width: 0px;
+        }
+
+        .menu-left > .scroll-content {
+          background-color: #222;
+        }
+
 
     </style>
 
@@ -64,25 +80,23 @@
                   </ion-nav-back-button>
               </ion-nav-bar>
               <ion-nav-buttons side="left">
-                  <button class="button button-icon button-clear ion-navicon" ng-click="toogleLeft()">
-
+                  <button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
                   </button>
               </ion-nav-buttons>
               <ion-nav-view name="menuContent"></ion-nav-view>
           </ion-side-menu-content>
 
-          <ion-side-menu side="left" width="myWidthValue + 160">
+          <ion-side-menu side="left">
             <ion-header-bar class="bar-balanced">
                 <h1 class="title">Sambet</h1>
             </ion-header-bar>
                 <ion-content>
                     <ul class="list">
-                        <a href="#/event/home" class="item">Home</a>
-                        <a href="#/event/groups" class="item">Groups</a>
-                        <a href="#/event/tips" class="item">Tips</a>
-                        <a href="#/event/settings" class="item">Settings</a>
-                        <a href="#/event/about" class="item">About</a>
-                        <a href="#/event/contact" class="item">Contact</a>
+                        <a menu-close href="#/event/home" class="item"><i class="icon ion-home"></i>  Home</a>
+                        <a menu-close href="#/event/groups" class="item"><i class="icon ion-person-stalker"></i> Groups</a>
+                        <a menu-close href="#/event/tips" class="item"><i class="icon ion-edit"></i> Tips</a>
+                        <a menu-close href="#/event/settings" class="item"><i class="icon ion-settings"></i> Settings</a>
+                        <a menu-close href="#/event/contact" class="item"><i class="icon ion-email"></i> Contact</a>
                     </ul>
                 </ion-content>
 
@@ -320,8 +334,25 @@
     <script id="contact.html" type="text/ng-template">
       <ion-view title="Contact">
         <ion-content>
-          <p>@IonicFramework</p>
-          <p>@DriftyCo</p>
+
+          <div class="card">
+            <div class="item item-text-wrap">
+              Lukas Carullo - lukas@carullo.de
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="item item-text-wrap">
+              Xaver Westenthanner - xaver.westenthanner@gmail.com
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="item item-text-wrap">
+              Patrick Spiegel - patrickspiegel92@gmail.com
+            </div>
+          </div>
+
         </ion-content>
       </ion-view>
     </script>

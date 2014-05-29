@@ -69,8 +69,8 @@ angular.module('sambet', ['ionic'])
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate)
 {
-  $scope.toogleLeft = function()
+  $scope.toggleLeft = function()
   {
-      $ionicSideMenuDelegate.toogleLeft();
+      $ionicSideMenuDelegate.toggleLeft();
   }
 });
