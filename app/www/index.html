@@ -73,35 +73,51 @@
     <script id="dashboard.html" type="text/ng-template">
       <ion-view title="Dashboard">
         <ion-content>
-          <div class="" id="nextGame">
+
+          <div class="card">
+          <div class="tabs item item-divider">
+            <a class="tab-item">
+              <i class="smallIcon icon ion-person"></i>
+            </a>
+            <a class="tab-item">
+              <span>Username</span>
+            </a>
+            <a class="tab-item">
+              <p>9 Points</p>
+            </a>
+          </div>
+        </div>
+
+          <div class="seperator">
             <i class="icon ion-calendar"></i> Next Games
           </div>
+
             
 
         <!-- Game title -->
         <div class="card">
           <div class="tabs item item-divider">
             <a class="tab-item">
-              <img src="img/flag/Germany.png" style="margin: 8px;"/>
+              <img src="img/flag/Germany.png" style="margin: 4px;"/>
             </a>
             <a class="tab-item">
-              <span>GER - ENG</span>
+              <span >GER - ENG</span>
             </a>
             <a class="tab-item">
-              <img src="img/flag/England.png" style="margin: 8px;"/>
+              <img src="img/flag/England.png" style="margin: 4px;"/>
             </a>
           </div>
 
           <!-- Game overview -->
           <div class="tabs item item-text-wrap">
             <a class="tab-item">
-              <button class="button button-small button-block button-light">2</button>
+             <p> 2</p>
             </a>
             <a class="tab-item">
-              <i class="icon ion-person"></i>
+              <i class="smallIcon icon ion-person"></i>
             </a>
             <a class="tab-item">
-              <button class="button button-small button-block button-light">2</button>
+              <p>3</p>
             </a>
           </div>
 
@@ -109,13 +125,75 @@
           <!-- Game options -->
           <div class="item tabs tabs-secondary tabs-icon-left">
             <a class="tab-item" href="#">
-              <i class="icon ion-share"></i>Share
+              <p>12. June</p>
             </a>
             <a class="tab-item" href="#">
-              <i class="icon ion-edit"></i> Edit
+              <p>16:30pm</p>
+            </a>
+            <a class="tab-item" href="#" >
+              <i class="smallIcon icon ion-edit" ></i>
             </a>
           </div>
         </div>
+
+
+        <!-- Last Games -->
+        <div class="seperator">
+          <i class="icon ion-calendar"></i> Last Games
+        </div>
+
+        <!-- Game title -->
+        <div class="card">
+          <div class="tabs item item-divider">
+            <a class="tab-item">
+              <img src="img/flag/Argentina.png" style="margin: 4px;"/>
+            </a>
+            <a class="tab-item">
+              <span style="line-height:20px;">ARG - SPN</span></br>
+              <span>12.06.2014</span>
+            </a>
+            <a class="tab-item">
+              <img src="img/flag/Spain.png" style="margin: 4px;"/>
+            </a>
+          </div>
+
+          <!-- Game overview -->
+          <div class="tabs item item-text-wrap">
+            <a class="tab-item">
+             <p> 2</p>
+            </a>
+            <a class="tab-item">
+              <i class="smallIcon icon ion-person"></i>
+            </a>
+            <a class="tab-item">
+              <p>3</p>
+            </a>
+          </div>
+
+          <div class="tabs item item-text-wrap">
+            <a class="tab-item">
+             <p> 2</p>
+            </a>
+            <a class="tab-item">
+              <i class="smallIcon icon ion-earth"></i>
+            </a>
+            <a class="tab-item">
+              <p>3</p>
+            </a>
+          </div>
+
+          <!-- Game options -->
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#" >
+              <p>3 Points</p>
+            </a>
+          </div>
+        </div>
+
+
+          
+        </div>
+
         </ion-content>
       </ion-view>
 
@@ -141,7 +219,8 @@
                 Sambet is a student project - therefore constructive feedback is always welcome! If you like Sambet, please like and share to support us.</br></br>
 
                 Upcomming features:</br>
-                + View the tips of your friends</br></br>
+                + View the tips of your friends</br>
+                + Pull to refresh</br></br>
 
                 Sambet is available for Android and iOS.
 

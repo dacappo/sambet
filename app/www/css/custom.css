@@ -1,7 +1,7 @@
-#nextGame
+.seperator
 {
     text-align: center;
-    background-color: #222;
+    background-color: #333;
     color: #FFF;
     font-weight: 300;
     font-size: 14px;
@@ -51,7 +51,26 @@ a.item:hover {
     background-color: #222;
 }
 
+/* light grey background color */
 .scroll-content 
 {
     background-color: #FAFAFA;
+}
+
+/* shrink game overview cards to 40px height */
+.tabs 
+{
+    height: 40px;
+    line-height: 40px;
+}
+
+/* adapted icons for smaller cards - fix that -> no important declaration */
+.smallIcon::before {
+    line-height:40px !important;
+    font-size: 24px !important;
+}
+
+.smallIcon {
+    line-height:40px !important;
+    font-size: 16px !important;
 }
