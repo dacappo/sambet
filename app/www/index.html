@@ -54,7 +54,7 @@
             </ion-header-bar>
                 <ion-content>
                     <ul class="list">
-                        <a menu-close href="#/event/home" class="item"><i class="icon ion-home" ></i>  Home</a>
+                        <a menu-close href="#/event/dashboard" class="item"><i class="icon ion-home" ></i>  Dashboard</a>
                         <a menu-close href="#/event/groups" class="item"><i class="icon ion-person-stalker"></i> Groups</a>
                         <a menu-close href="#/event/tips" class="item"><i class="icon ion-edit"></i> Tips</a>
                         <a menu-close href="#/event/settings" class="item"><i class="icon ion-settings"></i> Settings</a>
@@ -70,14 +70,13 @@
 
 
     <!-- Home view content - Dashboard -->
-    <script id="home.html" type="text/ng-template">
-      <ion-view title="Home">
-        <ion-content padding ="true">
-            <div class="row">
-                <div class="col col-90" id="nextGame">
-                    <i class="icon ion-calendar"></i> Next Games
-                </div>
-            </div>
+    <script id="dashboard.html" type="text/ng-template">
+      <ion-view title="Dashboard">
+        <ion-content>
+          <div class="" id="nextGame">
+            <i class="icon ion-calendar"></i> Next Games
+          </div>
+            
 
         <!-- Game title -->
         <div class="card">
@@ -126,7 +125,7 @@
     <!-- About view - some basic information about the app -->
     <script id="about.html" type="text/ng-template">
       <ion-view title="About">
-        <ion-content padding="true">
+        <ion-content >
           <div class="list card">
 
             <div class="item item-avatar">

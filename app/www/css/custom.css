@@ -1,10 +1,11 @@
 #nextGame
 {
-    border-top: 1px solid slategray;
-    border-bottom: 1px solid slategray;
     text-align: center;
-    margin: 0 auto;
-    margin-bottom: 10px;
+    background-color: #222;
+    color: #FFF;
+    font-weight: 300;
+    font-size: 14px;
+    padding:4px 0px;
 
 }
 
@@ -48,4 +49,9 @@ a.item:hover {
 .menu-left > .scroll-content
 {
     background-color: #222;
+}
+
+.scroll-content 
+{
+    background-color: #FAFAFA;
 }

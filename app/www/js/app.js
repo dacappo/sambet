@@ -8,11 +8,11 @@ angular.module('sambet', ['ionic'])
       abstract: true,
       templateUrl: "event-menu.html"
     })
-    .state('eventmenu.home', {
-      url: "/home",
+    .state('eventmenu.dashboard', {
+      url: "/dashboard",
       views: {
           'menuContent':{
-              templateUrl: "home.html"
+              templateUrl: "dashboard.html"
           }
       }
     })
@@ -63,7 +63,7 @@ angular.module('sambet', ['ionic'])
     });
 
 
-   $urlRouterProvider.otherwise("/event/home");
+   $urlRouterProvider.otherwise("/event/dashboard");
 
 })
 
