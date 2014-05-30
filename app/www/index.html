@@ -1,79 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <!-- Basic HTML settings -->
     <meta charset="utf-8">
     <title>Sambet</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
+    <!-- Ionic and custom stylesheets -->
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
+    <!-- Ionic framework script -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <style>
-        #nextGame
-        {
-            border-top: 1px solid slategray;
-            border-bottom: 1px solid slategray;
-            text-align: center;
-            margin: 0 auto;
-            margin-bottom: 10px;
-
-        }
-
-        #groupName
-        {
-            margin-bottom: 0px;
-        }
-
-        .line
-        {
-           border: 1px solid gainsboro;
-           margin-top: 0px !important;
-        }
-
-        .points
-        {
-            border-left: 1px solid gainsboro;
-
-        }
-
-        a.item {
-            background-color: #222;
-            color: white;
-            border-width: 0px;
-        }
-
-        a.item:hover {
-            background-color: #000;
-            color: white;
-            border-width: 0px;
-        }
-
-        .menu-left > .scroll-content {
-          background-color: #222;
-        }
-
-
-    </style>
-
     
     <!-- Needed for Cordova/PhoneGap (will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <!-- App specific script -->
     <script src="js/app.js"></script>
   </head>
 
 
   <body ng-app="sambet">
 
+    <!-- Basic Ionic layout -->
     <div ng-controller="MainCtrl">
         <ion-nav-view></ion-nav-view>
     </div>
 
-
+    <!-- Navigation view - side navigation with logo and inital viewport @abstract -->
     <script id="event-menu.html" type="text/ng-template">
 
       <ion-side-menus>
+
+          <!-- Essential view port with menu bar -->
           <ion-side-menu-content>
               <ion-nav-bar class="bar-balanced">
                   <ion-nav-back-button class="button-icon ion-arrow-left-c">
@@ -86,9 +47,10 @@
               <ion-nav-view name="menuContent"></ion-nav-view>
           </ion-side-menu-content>
 
+          <!-- Side panel navigation -->
           <ion-side-menu side="left">
             <ion-header-bar class="bar-balanced">
-                <h1 class="title">Sambet</h1>
+                </img><h1 class="title">Sambet</h1>
             </ion-header-bar>
                 <ion-content>
                     <ul class="list">
@@ -98,14 +60,16 @@
                         <a menu-close href="#/event/settings" class="item"><i class="icon ion-settings"></i> Settings</a>
                         <a menu-close href="#/event/contact" class="item"><i class="icon ion-email"></i> Contact</a>
                     </ul>
+                    <img src="img/logo.png" style="width:100px; margin:30px 70px;"></img>
                 </ion-content>
-
           </ion-side-menu>
 
       </ion-side-menus>
 
     </script>
 
+
+    <!-- Home view content - Dashboard -->
     <script id="home.html" type="text/ng-template">
       <ion-view title="Home">
         <ion-content padding ="true">
@@ -158,6 +122,8 @@
 
     </script>
 
+
+    <!-- About view - some basic information about the app -->
     <script id="about.html" type="text/ng-template">
       <ion-view title="About">
         <ion-content padding="true">
@@ -172,6 +138,7 @@
     </script>
 
 
+    <!-- Group view - list of all groups  -->
     <script id="groups.html" type="text/ng-template">
         <ion-view title="Groups">
             <ion-content padding="true">
@@ -215,13 +182,12 @@
                     </div>
                 </div>
 
-
-
-
             </ion-content>
         </ion-view>
     </script>
 
+
+    <!-- Tip view - all games are listed - onclick popup to set tip -->
     <script id="tips.html" type="text/ng-template">
         <ion-view title="Tips">
             <ion-content padding="true">
@@ -315,6 +281,8 @@
         </ion-view>
     </script>
 
+
+    <!-- Setting view - Basic settings eg. alter Username -->
     <script id="settings.html" type="text/ng-template">
         <ion-view title="Settings">
             <ion-content padding="true">
@@ -331,6 +299,8 @@
         </ion-view>
     </script>
 
+
+    <!-- Contact view - email of authors -->
     <script id="contact.html" type="text/ng-template">
       <ion-view title="Contact">
         <ion-content>
@@ -356,114 +326,6 @@
         </ion-content>
       </ion-view>
     </script>
-
-
-  <!--
-  <ion-side-menus>
-
-    <!-- Center content 
-    <ion-side-menu-content>
-      <ion-header-bar class="bar-balanced">
-        <a menu-toggle="left" class="button button-icon icon ion-navicon"></a>
-        <h1 class="title">Dashboard</h1>
-      </ion-header-bar>
-
-
-      <ion-content>
-
-        <button class="button button-small button-full button-light"><i class="icon ion-calendar"></i> Next Games</button>
-        <!-- Game title 
-        <div class="card">
-          <div class="tabs item item-divider">
-            <a class="tab-item">
-              <img src="img/flag/Germany.png" style="margin: 8px;"></img>
-            </a>
-            <a class="tab-item">
-              <span>GER - ENG</span>
-            </a>
-            <a class="tab-item">
-              <img src="img/flag/England.png" style="margin: 8px;"></img>
-            </a>
-          </div>
-
-          <!-- Game overview 
-          <div class="tabs item item-text-wrap">
-            <a class="tab-item">
-              <button class="button button-small button-block button-light">2</button>
-            </a>
-            <a class="tab-item">
-              <i class="icon ion-person"></i>
-            </a>
-            <a class="tab-item">
-              <button class="button button-small button-block button-light">2</button>
-            </a>
-          </div>
-
-
-          <!-- Game options 
-          <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" href="#">
-              <i class="icon ion-share"></i>Share
-            </a>
-            <a class="tab-item" href="#">
-              <i class="icon ion-edit"></i> Edit
-            </a>
-          </div>
-        </div> 
-
-      </ion-content>
-
-
-      <!-- Footer menu 
-      <ion-footer-bar align-title="center" class="bar-balanced">
-        <h1 class="title" style="overflow:visible"><img src="img/logo.png" style="height:70px; margin-top:-5px;"></img></h1>
-        <button class="button button-clear"><i class="icon ion-person"></i> 23</button>
-      </ion-footer-bar>
-    </ion-side-menu-content>
-
-    <!-- Left menu 
-    <ion-side-menu side="left">
-      <ion-header-bar class="bar-dark">
-        <h1 class="title">Navigation</h1>
-      </ion-header-bar>
-      <ion-content >
-        <!-- our list and list items 
-        <ion-list>
-          <ion-item><i class="icon ion-home"></i> Dashboard</ion-item>
-          <ion-item><i class="icon ion-edit"></i> Tips</ion-item>
-          <ion-item><i class="icon ion-person-stalker"></i> Groups</ion-item>
-          <ion-item><i class="icon ion-settings"></i> Settings</ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-side-menu>
-
-  </ion-side-menus>
-      
-      
-      
-
-    
-    
-
-  <script id="tabs.html" type="text/ng-template">
-      <ion-tabs class="tabs-icon-top tabs-positive">
-
-        <ion-tab title="Home" icon="ion-home" href="#/tab/home">
-          <ion-nav-view name="home-tab"></ion-nav-view>
-        </ion-tab>
-
-        <ion-tab title="About" icon="ion-ios7-information" href="#/tab/about">
-          <ion-nav-view name="about-tab"></ion-nav-view>
-        </ion-tab>
-
-        <ion-tab title="Contact" icon="ion-ios7-world" ui-sref="tabs.contact">
-          <ion-nav-view name="contact-tab"></ion-nav-view>
-        </ion-tab>
-
-      </ion-tabs>
-    </script>
--->
-
 
 </body>
 </html>

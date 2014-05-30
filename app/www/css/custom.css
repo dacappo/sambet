@@ -1,0 +1,43 @@
+#nextGame
+{
+    border-top: 1px solid slategray;
+    border-bottom: 1px solid slategray;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+}
+
+#groupName
+{
+    margin-bottom: 0px;
+}
+
+.line
+{
+     border: 1px solid gainsboro;
+     margin-top: 0px !important;
+}
+
+.points
+{
+    border-left: 1px solid gainsboro;
+
+}
+
+a.item {
+    background-color: #222;
+    color: white;
+    border-width: 0px;
+}
+
+a.item:hover {
+    background-color: #000;
+    color: white;
+    border-width: 0px;
+}
+
+.menu-left > .scroll-content
+{
+    background-color: #222;
+}
