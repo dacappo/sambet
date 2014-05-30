@@ -58,7 +58,7 @@
                         <a menu-close href="#/event/groups" class="item"><i class="icon ion-person-stalker"></i> Groups</a>
                         <a menu-close href="#/event/tips" class="item"><i class="icon ion-edit"></i> Tips</a>
                         <a menu-close href="#/event/settings" class="item"><i class="icon ion-settings"></i> Settings</a>
-                        <a menu-close href="#/event/contact" class="item"><i class="icon ion-email"></i> Contact</a>
+                        <a menu-close href="#/event/about" class="item"><i class="icon ion-document-text"></i> About</a>
                     </ul>
                     <img src="img/logo.png" style="width:100px; margin:30px 70px;"></img>
                 </ion-content>
@@ -127,12 +127,44 @@
     <script id="about.html" type="text/ng-template">
       <ion-view title="About">
         <ion-content padding="true">
-          <h3>Create hybrid mobile apps with the web technologies you love.</h3>
-          <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building highly interactive apps.</p>
-          <p>Built with Sass and optimized for AngularJS.</p>
-          <p>
+          <div class="list card">
 
-          </p>
+            <div class="item item-avatar">
+              <img src="img/logo.png">
+              <h2>Sambet</h2>
+              <p>June 02, 2014</p>
+            </div>
+
+            <div class="item item-body">
+              <p>
+                The Sambet app allows sharing your soccer game tips with your friends in an easy way. Just build different groups to see who gives the best tips for the soccer world championship 2014 - in an easy and fun way. </br></br>
+
+                Sambet is a student project - constructive feedback is always welcome! If you like Sambet, please like and share to support us.</br></br>
+
+                Upcomming features:</br>
+                + View the tips of your friends</br></br>
+
+                Sambet is available for Android and iOS.
+
+
+              </p>
+              
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+              <a class="tab-item" href="#">
+                <i class="icon ion-thumbsup"></i>
+                Like
+              </a>
+              
+              <a class="tab-item" href="#">
+                <i class="icon ion-share"></i>
+                Share
+              </a>
+            </div>
+
+          </div>
+
         </ion-content>
       </ion-view>
     </script>
@@ -287,10 +319,12 @@
         <ion-view title="Settings">
             <ion-content padding="true">
                 <div class="list">
-                    <div class="list-header">Username ändern</div>
-                    <label class="item">alter Username</label>
-                    <label class="item item-input">
-                        <input type="text" placeholder="new username">
+                    <div class="list-header">Change username</div>
+                    <label class="item">
+                      <p>Old username</p>
+                    </label>
+                    <label class="item ">
+                        <input type="text" placeholder="New username">
                     </label>
                     <button class="item button button-light button-balanced button-block">Submit</button>
 
@@ -305,24 +339,7 @@
       <ion-view title="Contact">
         <ion-content>
 
-          <div class="card">
-            <div class="item item-text-wrap">
-              Lukas Carullo - lukas@carullo.de
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="item item-text-wrap">
-              Xaver Westenthanner - xaver.westenthanner@gmail.com
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="item item-text-wrap">
-              Patrick Spiegel - patrickspiegel92@gmail.com
-            </div>
-          </div>
-
+        
         </ion-content>
       </ion-view>
     </script>
