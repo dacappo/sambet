@@ -25,18 +25,26 @@
 
 }
 
+/* Navigation element dark */
 a.item {
     background-color: #222;
     color: white;
     border-width: 0px;
 }
 
+/* Navigation text indent to icon */
+a > i {
+    margin-right: 15px;
+}
+
+/* Navigation item hover effect */
 a.item:hover {
     background-color: #000;
     color: white;
     border-width: 0px;
 }
 
+/* Navigation background dark */
 .menu-left > .scroll-content
 {
     background-color: #222;
