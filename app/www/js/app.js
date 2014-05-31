@@ -35,6 +35,15 @@ angular.module('sambet', ['ionic'])
           }
       })
 
+      .state('eventmenu.start', {
+          url: "/start",
+          views: {
+              'menuContent':{
+                  templateUrl: "start.html"
+              }
+          }
+      })
+
       .state('eventmenu.tips', {
           url: "/tips",
           views: {
@@ -63,7 +72,7 @@ angular.module('sambet', ['ionic'])
     });
 
 
-   $urlRouterProvider.otherwise("/event/dashboard");
+   $urlRouterProvider.otherwise("/event/start");
 
 })
 
@@ -76,4 +85,13 @@ angular.module('sambet', ['ionic'])
 
   $scope.data = { username : "Paxalu",
                   points : 9};
+})
+
+
+.controller('StartCtrl', function($scope, $state)
+{
+  $scope.next =function()
+  {
+      $state.go('eventmenu.dashboard');
+  };
 });

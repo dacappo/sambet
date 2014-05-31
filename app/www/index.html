@@ -412,6 +412,17 @@
     </script>
 
 
+    <script id="start.html" type="text/ng-template">
+        <ion-view title="Welcome">
+            <ion-content padding="true" ng-controller="StartCtrl">
+                <h1>Welcome</h1>
+                <h3>Please get a user name</h3>
+                <input type="text" placeholder="Your username">
+                <button class="button button-light button-balanced button-block" ng-click="next()">Next</button>
+            </ion-content>
+        </ion-view>
+    </script>
+
     <!-- Contact view - email of authors -->
     <script id="contact.html" type="text/ng-template">
       <ion-view title="Contact">
