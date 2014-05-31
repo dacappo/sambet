@@ -52,7 +52,7 @@
             <ion-header-bar class="bar-balanced">
                 </img><h1 class="title">Sambet</h1>
             </ion-header-bar>
-                <ion-content>
+                <ion-content class="darkBackground">
                     <ul class="list">
                         <a menu-close href="#/event/dashboard" class="item"><i class="icon ion-home" ></i>  Dashboard</a>
                         <a menu-close href="#/event/groups" class="item"><i class="icon ion-person-stalker"></i> Groups</a>
@@ -80,10 +80,10 @@
               <i class="smallIcon icon ion-person"></i>
             </a>
             <a class="tab-item">
-              <span>Username</span>
+              <span>{{data.username}}</span>
             </a>
             <a class="tab-item">
-              <p>9 Points</p>
+              <p>{{data.points}} Points</p>
             </a>
           </div>
         </div>
@@ -399,7 +399,7 @@
                 <div class="list">
                     <div class="list-header"><h4>Change username</h4></div>
                     <label class="item">
-                      <p>Old username</p>
+                      <p>{{data.username}}</p>
                     </label>
                     <label class="item ">
                         <input type="text" placeholder="New username">

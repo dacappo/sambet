@@ -72,5 +72,8 @@ angular.module('sambet', ['ionic'])
   $scope.toggleLeft = function()
   {
       $ionicSideMenuDelegate.toggleLeft();
-  }
+  };
+
+  $scope.data = { username : "Paxalu",
+                  points : 9};
 });
