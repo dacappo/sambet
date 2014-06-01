@@ -1,6 +1,9 @@
 /**
  * Created by Lukas on 01.06.2014.
  */
+var db = require('../models')
+var User = require('./user')
+
 exports.find = function(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
     db.Group
