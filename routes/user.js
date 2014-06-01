@@ -24,7 +24,7 @@ exports.find = function(req, res , next){
 
 //Non API Function
 exports.findByID = function(id){
-    db.User
+    return db.User
         .find({ where: { id: id} })
         .complete(function(err, user) {
             if (!!err) {
