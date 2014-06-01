@@ -24,7 +24,8 @@ exports.create = function(req, res) {
     res.setHeader('Access-Control-Allow-Origin','*');
     db.Group
         .create({
-            name: req.header('name')
+            name: req.header('name'),
+            created_by: req.header('created_by')
         })
         .complete(function(err, group) {
             if (!!err) {
