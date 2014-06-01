@@ -24,21 +24,7 @@ exports.find = function(req, res , next){
 
 //Non API Function
 exports.findByID = function(id){
-    return db.User
-        .find({ where: { id: id} })
-        .complete(function(err, user) {
-            if (!!err) {
-                console.log('An error occurred while searching for the user:', err);
-                return
-            } else if (!user) {
-                console.log('No user has been found.');
-                return
-            } else {
-                console.log('Hello ' + user.username + '!');
-                console.log('All attributes of john:', user.values);
-                return user;
-            }
-        })
+    return db.User.find({ where: { id: id} });
 }
 
 exports.create = function(req, res) {
