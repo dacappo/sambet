@@ -24,7 +24,9 @@ exports.find = function(req, res , next){
 
 //Non API Function
 exports.findByID = function(id){
-    return db.User.find({ where: { id: id} });
+    db.User.find({ where: { id: id} }).success(function(user){
+       return user;
+    });
 }
 
 exports.create = function(req, res) {
