@@ -7,6 +7,7 @@ var logfmt = require("logfmt");
 var mysql = require('mysql'),
     routes  = require('./routes'),
     user    = require('./routes/user')
+    group   = require('./routes/user')
     , http    = require('http')
     , path    = require('path')
     , db      = require('./models')
