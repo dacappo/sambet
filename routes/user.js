@@ -22,21 +22,21 @@ exports.find = function(req, res , next){
         })
 }
 
-exports.findByID = function(req, res , next){
-    res.setHeader('Access-Control-Allow-Origin','*');
+//Non API Function
+exports.findByID = function(id){
     db.User
-        .find({ where: { id: req.header('id')} })
+        .find({ where: { id: id} })
         .complete(function(err, user) {
             if (!!err) {
-                console.log('An error occurred while searching for the user:', err)
-                res.send("An error occurred while searching for the user:", err);
+                console.log('An error occurred while searching for the user:', err);
+                return
             } else if (!user) {
-                console.log('No user has been found.')
-                res.send("No user has been found.");
+                console.log('No user has been found.');
+                return
             } else {
-                console.log('Hello ' + user.username + '!')
-                console.log('All attributes of john:', user.values)
-                res.send({user: user});
+                console.log('Hello ' + user.username + '!');
+                console.log('All attributes of john:', user.values);
+                return user;
             }
         })
 }
