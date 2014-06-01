@@ -26,6 +26,7 @@ exports.find = function(req, res , next){
 exports.create = function(req, res) {
     res.setHeader('Access-Control-Allow-Origin','*');
     var creator = User.findByID(req.header('created_by'));
+    console.log(creator.values);
     db.Group
         .create({
             name: req.header('name')
