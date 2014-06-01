@@ -24,7 +24,6 @@ exports.find = function(req, res , next){
 
 exports.create = function(req, res) {
     res.setHeader('Access-Control-Allow-Origin','*');
-    console.log(req.params.username);
     db.User
         .create({
             username: req.header('username'),

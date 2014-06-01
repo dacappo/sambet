@@ -22,7 +22,6 @@ exports.find = function(req, res , next){
 
 exports.create = function(req, res) {
     res.setHeader('Access-Control-Allow-Origin','*');
-    console.log(req.params.name);
     db.Group
         .create({
             name: req.header('name')
