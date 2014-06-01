@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         imea: DataTypes.STRING,
         email: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
 //            validate: {
 //                isEmail: true
 //            }
