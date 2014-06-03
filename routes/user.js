@@ -2,6 +2,7 @@
  * Created by Lukas on 25.05.2014.
  */
 var db = require('../models')
+var async = require('async');
 
 exports.find = function(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
@@ -20,16 +21,14 @@ exports.find = function(req, res , next){
                 res.send({user: user});
             }
         })
-}
+};
 
 //Non API Function
-exports.findByID = function(id){
-    var reUser;
-    db.User.find({ where: { id: id} }).success(function(user){
-       reUser =  user;
+exports.findByID = function(id, callback){
+    db.User.find({ where: { id: id} }).success(function(user) {
+        callback(user);
     });
-    return reUser;
-}
+};
 
 exports.create = function(req, res) {
     res.setHeader('Access-Control-Allow-Origin','*');

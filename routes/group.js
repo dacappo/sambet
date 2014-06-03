@@ -25,24 +25,24 @@ exports.find = function(req, res , next){
 
 exports.create = function(req, res) {
     res.setHeader('Access-Control-Allow-Origin','*');
-    var creator = User.findByID(req.header('created_by'));
-    console.log(creator.values);
-    db.Group
-        .create({
-            name: req.header('name')
-        })
-        .complete(function(err, group) {
-            if (!!err) {
-                console.log('The instance has not been saved:', err)
-                res.send({message: "error"});
-            } else {
-                console.log('We have a persisted instance now')
-                creator.setGroup(group).success(function(){
-                    console.log("Successfully linked group to user")
-                });
-                res.send({message: "group created!"});
-            }
-        })
+    User.findByID(req.header('created_by'), function(creator){
+        db.Group
+            .create({
+                name: req.header('name')
+            })
+            .complete(function(err, group) {
+                if (!!err) {
+                    console.log('The instance has not been saved:', err)
+                    res.send({message: "error"});
+                } else {
+                    console.log('We have a persisted instance now')
+                    creator.setGroup(group).success(function(){
+                        console.log("Successfully linked group to user")
+                    });
+                    res.send({message: "group created!"});
+                }
+            })
+    });
 }
 
 exports.delete = function(req , res , next){
