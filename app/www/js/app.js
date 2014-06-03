@@ -35,15 +35,6 @@ angular.module('sambet', ['ionic'])
           }
       })
 
-      .state('eventmenu.start', {
-          url: "/start",
-          views: {
-              'menuContent':{
-                  templateUrl: "start.html"
-              }
-          }
-      })
-
       .state('eventmenu.tips', {
           url: "/tips",
           views: {
@@ -69,15 +60,23 @@ angular.module('sambet', ['ionic'])
               templateUrl: "contact.html"
           }
       }
-    });
+    })
+
+     .state('intro', {
+          url:'/intro',
+          templateUrl:'intro.html',
+          controller:'IntroCtrl'
+      });
 
 
-   $urlRouterProvider.otherwise("/event/start");
+   $urlRouterProvider.otherwise("/intro");
 
 })
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate)
 {
+    $scope.hideBackButton = !$scope.hideBackButton;
+
   $scope.toggleLeft = function()
   {
       $ionicSideMenuDelegate.toggleLeft();
@@ -87,11 +86,37 @@ angular.module('sambet', ['ionic'])
                   points : 9};
 })
 
+.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate){
 
-.controller('StartCtrl', function($scope, $state)
-{
-  $scope.next =function()
-  {
-      $state.go('eventmenu.dashboard');
-  };
-});
+        $scope.data = {uuid : 8};
+
+       if($scope.data.uuid == 9)
+        {
+            $state.go('eventmenu.dashboard');
+        }
+
+       $scope.startApp = function()
+       {
+           $state.go('eventmenu.dashboard');
+       };
+
+       $scope.next = function(){
+           $ionicSlideBoxDelegate.next();
+       };
+
+       $scope.previous = function(){
+           $ionicSlideBoxDelegate.previous();
+       };
+
+       $scope.slideChanged = function(index){
+            $scope.slideIndex = index;
+       };
+
+        $scope.leftButtons =[{
+            type: 'button-icon icon ion-navicon',
+            tap: function(e){
+                $scope.sdieMenuController.toggleLeft();
+            }
+        }];
+        $scope.hideBackButton=true;
+    });
