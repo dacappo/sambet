@@ -7,6 +7,7 @@ var logfmt = require("logfmt");
 var mysql = require('mysql'),
     routes  = require('./routes'),
     user    = require('./routes/user')
+    group   = require('./routes/group')
     , http    = require('http')
     , path    = require('path')
     , db      = require('./models')
@@ -41,3 +42,8 @@ server.get({path: 'users/find' , version : '0.0.1'} , user.find);
 server.post({path: 'users/create' , version: '0.0.1'} , user.create);
 server.post({path: 'users/update' , version: '0.0.1'} , user.update);
 server.del({path: 'users/delete' , version: '0.0.1'} , user.delete);
+
+//Group Paths
+server.get({path: 'groups/find' , version : '0.0.1'} , group.find);
+server.post({path: 'groups/create' , version: '0.0.1'} , group.create);
+server.del({path: 'groups/delete' , version: '0.0.1'} , group.delete);

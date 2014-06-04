@@ -29,6 +29,27 @@
         <ion-nav-view></ion-nav-view>
     </div>
 
+    <script id="intro.html" type="text/ng-template" animation="slide-left-right-ios7">
+        <ion-view>
+
+            <ion-slide-box on-slide-changed="slideChanged(index)">
+                <ion-slide>
+                    <h1>Welcome to Sambet</h1>
+                </ion-slide>
+                <ion-slide>
+                    <p>Insert your username:</p>
+                    <input type="text">
+                    <button class="button button-block button-balanced">Submit</button>
+                </ion-slide>
+                <ion-slide>
+                    <h2>Congrats! You can start now!</h2>
+                    <a class="button button-block button-balanced" href="#/event/dashboard">Start</a>
+                </ion-slide>
+            </ion-slide-box>
+        </ion-view>
+    </script>
+
+
     <!-- Navigation view - side navigation with logo and inital viewport @abstract -->
     <script id="event-menu.html" type="text/ng-template">
 
@@ -71,8 +92,13 @@
 
     <!-- Home view content - Dashboard -->
     <script id="dashboard.html" type="text/ng-template">
+<<<<<<< HEAD
       <ion-view title="Dashboard">
         <ion-content padding="true">
+=======
+      <ion-view title="Dashboard" hide-back-button="true">
+        <ion-content>
+>>>>>>> d5818a3e466f231ca57de73528db152ad7affcb8
 
           <div class="card">
           <div class="tabs item item-divider">
@@ -464,16 +490,7 @@
     </script>
 
 
-    <script id="start.html" type="text/ng-template">
-        <ion-view title="Welcome">
-            <ion-content padding="true" ng-controller="StartCtrl">
-                <h1>Welcome</h1>
-                <h3>Please get a user name</h3>
-                <input type="text" placeholder="Your username">
-                <button class="button button-light button-balanced button-block" ng-click="next()">Next</button>
-            </ion-content>
-        </ion-view>
-    </script>
+
 
     <!-- Contact view - email of authors -->
     <script id="contact.html" type="text/ng-template">
