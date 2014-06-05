@@ -22,31 +22,86 @@
   </head>
 
 
-  <body ng-app="sambet">
+  <body ng-app="sambet" animation="slide-left-right-ios7">
+
 
     <!-- Basic Ionic layout -->
     <div ng-controller="MainCtrl">
         <ion-nav-view></ion-nav-view>
     </div>
 
-    <script id="intro.html" type="text/ng-template" animation="slide-left-right-ios7">
-        <ion-view>
+    <script id="intro.html" type="text/ng-template"> 
+      <ion-view hide-back-button="true">
+        <!-- Nav bar -->
+        <ion-nav-bar class="nav-title-slide-ios7 bar-light intro_nav_bar">
+          <ion-nav-back-button class="button-icon ion-arrow-left-c">
+          </ion-nav-back-button>
+        </ion-nav-bar>
 
-            <ion-slide-box on-slide-changed="slideChanged(index)">
-                <ion-slide>
-                    <h1>Welcome to Sambet</h1>
-                </ion-slide>
-                <ion-slide>
-                    <p>Insert your username:</p>
-                    <input type="text">
-                    <button class="button button-block button-balanced">Submit</button>
-                </ion-slide>
-                <ion-slide>
-                    <h2>Congrats! You can start now!</h2>
-                    <a class="button button-block button-balanced" href="#/event/dashboard">Start</a>
-                </ion-slide>
-            </ion-slide-box>
-        </ion-view>
+
+        <ion-nav-buttons side="left">
+          <button class="button button-balanced button-clear no-animation"
+                  ng-click="startApp()" ng-if="!slideIndex">
+            Skip Intro
+          </button>
+          <button class="button button-balanced button-clear no-animation"
+                  ng-click="previous()" ng-if="slideIndex > 0">
+            Previous Slide
+          </button>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right"> 
+          <button class="button button-balanced button-clear no-animation"
+                  ng-click="next()" ng-if="slideIndex != 2">
+            Next
+          </button>
+          <button class="button button-balanced button-clear no-animation"
+                  ng-click="startApp()" ng-if="slideIndex == 2">
+            Start using MyApp
+          </button>
+        </ion-nav-buttons>
+        <ion-slide-box on-slide-changed="slideChanged(index)">
+          
+          <!-- Slide 1 -->
+          <ion-slide>
+            <h3>Thank you for choosing Sambet!</h3>
+            <div id="logo">
+              <img src="img/logo.png" style="width:100px;">
+            </div>
+            <p>
+              We hope you&#x27;ll have fun with our app!
+            </p>
+            <p>By the way ... </p>
+            <p>
+              - You&#x27;re awesome! -
+            </p>
+          </ion-slide>
+
+          <!-- Slide 2 -->
+          <ion-slide>
+            <div id="logo">
+              <img src="img/logo.png" style="width:100px;">
+            </div>
+            <h3>The Basics of Sambet</h3>
+            
+            <div id="list">
+              <h5></h5>
+              <table>
+                <tr><td>Right tip</td><td>3 Points</td></tr>
+                <tr><td>Right goal difference</td><td>2 Points</td></tr>
+                <tr><td>Right tendency</td><td>1 Point</td></tr>
+              </table>
+            </div>
+          </ion-slide>
+
+          <!-- Slide 3 -->
+          <ion-slide>
+            <h3>Any questions?</h3>
+            <p>
+              Too bad! asdfasdf adf asdf a asd fas dfa dsf a 
+            </p>
+          </ion-slide>
+        </ion-slide-box>
+      </ion-view>
     </script>
 
 
@@ -92,14 +147,9 @@
 
     <!-- Home view content - Dashboard -->
     <script id="dashboard.html" type="text/ng-template">
-<<<<<<< HEAD
-      <ion-view title="Dashboard">
-        <ion-content padding="true">
-=======
-      <ion-view title="Dashboard" hide-back-button="true">
+      
+      <ion-view title="Dashboard" hide-back-button="true" padding="true">
         <ion-content>
->>>>>>> d5818a3e466f231ca57de73528db152ad7affcb8
-
           <div class="card">
           <div class="tabs item item-divider">
             <a class="tab-item">

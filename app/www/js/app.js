@@ -62,12 +62,11 @@ angular.module('sambet', ['ionic'])
       }
     })
 
-     .state('intro', {
-          url:'/intro',
-          templateUrl:'intro.html',
-          controller:'IntroCtrl'
-      });
-
+    .state('intro', {
+      url: '/intro',
+      templateUrl: 'intro.html',
+      controller: 'IntroCtrl'
+    })
 
    $urlRouterProvider.otherwise("/intro");
 
@@ -75,7 +74,7 @@ angular.module('sambet', ['ionic'])
 
 .controller('MainCtrl', function($scope, $ionicSideMenuDelegate)
 {
-    $scope.hideBackButton = !$scope.hideBackButton;
+  $scope.hideBackButton = !$scope.hideBackButton;
 
   $scope.toggleLeft = function()
   {
@@ -86,37 +85,21 @@ angular.module('sambet', ['ionic'])
                   points : 9};
 })
 
-.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate){
+.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
+ 
+  // Called to navigate to the main app
+  $scope.startApp = function() {
+    $state.go('eventmenu.dashboard');
+  };
+  $scope.next = function() {
+    $ionicSlideBoxDelegate.next();
+  };
+  $scope.previous = function() {
+    $ionicSlideBoxDelegate.previous();
+  };
 
-        $scope.data = {uuid : 8};
-
-       if($scope.data.uuid == 9)
-        {
-            $state.go('eventmenu.dashboard');
-        }
-
-       $scope.startApp = function()
-       {
-           $state.go('eventmenu.dashboard');
-       };
-
-       $scope.next = function(){
-           $ionicSlideBoxDelegate.next();
-       };
-
-       $scope.previous = function(){
-           $ionicSlideBoxDelegate.previous();
-       };
-
-       $scope.slideChanged = function(index){
-            $scope.slideIndex = index;
-       };
-
-        $scope.leftButtons =[{
-            type: 'button-icon icon ion-navicon',
-            tap: function(e){
-                $scope.sdieMenuController.toggleLeft();
-            }
-        }];
-        $scope.hideBackButton=true;
-    });
+  // Called each time the slide changes
+  $scope.slideChanged = function(index) {
+    $scope.slideIndex = index;
+  };
+})
