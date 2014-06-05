@@ -22,7 +22,7 @@
   </head>
 
 
-  <body ng-app="sambet" animation="slide-left-right-ios7">
+  <body ng-app="sambet">
 
 
     <!-- Basic Ionic layout -->
@@ -31,7 +31,7 @@
     </div>
 
     <script id="intro.html" type="text/ng-template"> 
-      <ion-view hide-back-button="true">
+      <ion-view hide-back-button="true" >
         <!-- Nav bar -->
         <ion-nav-bar class="nav-title-slide-ios7 bar-light intro_nav_bar">
           <ion-nav-back-button class="button-icon ion-arrow-left-c">
@@ -40,33 +40,28 @@
 
 
         <ion-nav-buttons side="left">
-          <button class="button button-balanced button-clear no-animation"
-                  ng-click="startApp()" ng-if="!slideIndex">
-            Skip Intro
-          </button>
-          <button class="button button-balanced button-clear no-animation"
-                  ng-click="previous()" ng-if="slideIndex > 0">
+          <button class="button button-balanced button-clear no-animation" ng-click="previous()" ng-if="slideIndex > 0">
             Previous Slide
           </button>
         </ion-nav-buttons>
+
         <ion-nav-buttons side="right"> 
-          <button class="button button-balanced button-clear no-animation"
-                  ng-click="next()" ng-if="slideIndex != 2">
+          <button class="button button-balanced button-clear no-animation" ng-click="next()" ng-if="slideIndex != 2">
             Next
           </button>
-          <button class="button button-balanced button-clear no-animation"
-                  ng-click="startApp()" ng-if="slideIndex == 2">
+          <button class="button button-balanced button-clear no-animation" ng-click="startApp()" ng-if="slideIndex == 2">
             Start using MyApp
           </button>
         </ion-nav-buttons>
+
         <ion-slide-box on-slide-changed="slideChanged(index)">
           
           <!-- Slide 1 -->
           <ion-slide>
             <h3>Thank you for choosing Sambet!</h3>
-            <div id="logo">
-              <img src="img/logo.png" style="width:100px;">
-            </div>
+            
+              <img src="img/logo.png" class="logo">
+            
             <p>
               We hope you&#x27;ll have fun with our app!
             </p>
@@ -78,27 +73,32 @@
 
           <!-- Slide 2 -->
           <ion-slide>
-            <div id="logo">
-              <img src="img/logo.png" style="width:100px;">
-            </div>
-            <h3>The Basics of Sambet</h3>
+            
+              <img src="img/logo.png" class="logo">
+            
+            <h3>The rules are as simple as</h3>
             
             <div id="list">
               <h5></h5>
               <table>
-                <tr><td>Right tip</td><td>3 Points</td></tr>
-                <tr><td>Right goal difference</td><td>2 Points</td></tr>
-                <tr><td>Right tendency</td><td>1 Point</td></tr>
+                <tr><td>Correct tip</td><td>3 Points</td></tr>
+                <tr><td>Correct goal difference</td><td>2 Points</td></tr>
+                <tr><td>Correct tendency</td><td>1 Point</td></tr>
               </table>
             </div>
           </ion-slide>
 
           <!-- Slide 3 -->
-          <ion-slide>
-            <h3>Any questions?</h3>
-            <p>
-              Too bad! asdfasdf adf asdf a asd fas dfa dsf a 
-            </p>
+          <ion-slide >
+            <h3>Set a username and get started!</h3>
+            <div class="list" padding="true">
+                    
+                    <label class="item ">
+                        <input type="text" placeholder="New username" ng-model="data.new_username">
+                    </label>
+                    <button class="item button button-light button-balanced button-block" ng-click="startApp()">Get started</button>
+
+                </div>
           </ion-slide>
         </ion-slide-box>
       </ion-view>
@@ -530,9 +530,9 @@
                       <p>{{data.username}}</p>
                     </label>
                     <label class="item ">
-                        <input type="text" placeholder="New username">
+                        <input type="text" placeholder="New username" ng-model="data.new_username">
                     </label>
-                    <button class="item button button-light button-balanced button-block">Submit</button>
+                    <button class="item button button-light button-balanced button-block" ng-click="changeUsername()">Submit</button>
 
                 </div>
             </ion-content>

@@ -102,13 +102,14 @@ a.item:hover {
   font-weight: 300;
 }
 
-#logo {
-  margin: 30px 0px;
+.logo {
+  margin: 10px 0px;
+  width: 100px;
 }
 
 #list {
-  width: 250px;
-  margin: 30px auto;
+  width: 270px;
+  margin: 20px auto;
   font-size: 17px;
 }
 #list ol {
@@ -117,7 +118,7 @@ a.item:hover {
 #list td {
   text-align: left;
   list-style: decimal;
-  padding: 10px;
+  padding: 5px 10px;
 }
 
 

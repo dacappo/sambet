@@ -72,7 +72,7 @@ angular.module('sambet', ['ionic'])
 
 })
 
-.controller('MainCtrl', function($scope, $ionicSideMenuDelegate)
+.controller('MainCtrl', function($scope, $state, $ionicSideMenuDelegate)
 {
   $scope.hideBackButton = !$scope.hideBackButton;
 
@@ -82,13 +82,22 @@ angular.module('sambet', ['ionic'])
   };
 
   $scope.data = { username : "Paxalu",
+                  new_username : "",
                   points : 9};
+
+  $scope.changeUsername = function() {
+    $scope.data.username = $scope.data.new_username;
+    $scope.data.new_username = "";
+    $state.go('eventmenu.dashboard');
+  };
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
  
   // Called to navigate to the main app
   $scope.startApp = function() {
+    $scope.data.username = $scope.data.new_username;
+    $scope.data.new_username = "";
     $state.go('eventmenu.dashboard');
   };
   $scope.next = function() {
