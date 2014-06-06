@@ -107,6 +107,11 @@ a.item:hover {
   width: 100px;
 }
 
+.start
+{
+    margin-top: 200px;
+}
+
 #list {
   width: 270px;
   margin: 20px auto;
