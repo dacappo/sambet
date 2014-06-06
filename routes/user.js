@@ -2,7 +2,6 @@
  * Created by Lukas on 25.05.2014.
  */
 var db = require('../models')
-var async = require('async');
 
 exports.find = function(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
