@@ -68,12 +68,38 @@ angular.module('sambet', ['ionic'])
       controller: 'IntroCtrl'
     })
 
-   $urlRouterProvider.otherwise("/intro");
+
+   $urlRouterProvider.otherwise("/dashboard");
 
 })
 
 .controller('MainCtrl', function($scope, $state, $ionicSideMenuDelegate)
 {
+    $scope.init=function()
+    {
+        ionic.Platform.ready(function(){
+            var device = ionic.Platform.device();
+            var uuid = device.uuid;
+            $scope.data = { deviceid : uuid};
+            goForward(uuid);
+        });
+
+        function goForward(deviceID)
+        {
+            if(deviceID == "916cd04fd5a08dbe")
+            {
+                $state.go('eventmenu.dashboard');
+            }
+            else
+            {
+                $state.go('intro');
+            }
+        };
+
+
+    };
+
+
   $scope.hideBackButton = !$scope.hideBackButton;
 
   $scope.toggleLeft = function()
@@ -93,7 +119,9 @@ angular.module('sambet', ['ionic'])
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
- 
+
+
+
   // Called to navigate to the main app
   $scope.startApp = function() {
     $scope.data.username = $scope.data.new_username;

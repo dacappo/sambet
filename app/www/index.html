@@ -24,11 +24,11 @@
 
   <body ng-app="sambet">
 
-
     <!-- Basic Ionic layout -->
-    <div ng-controller="MainCtrl">
+    <div ng-controller="MainCtrl" ng-init="init()">
         <ion-nav-view></ion-nav-view>
     </div>
+
 
     <script id="intro.html" type="text/ng-template"> 
       <ion-view hide-back-button="true" >
@@ -69,6 +69,7 @@
             <p>
               - You&#x27;re awesome! -
             </p>
+              <p>{{data.deviceid}}</p>
           </ion-slide>
 
           <!-- Slide 2 -->
@@ -136,7 +137,7 @@
                         <a menu-close href="#/event/settings" class="item"><i class="icon ion-settings"></i> Settings</a>
                         <a menu-close href="#/event/about" class="item"><i class="icon ion-more"></i> About</a>
                     </ul>
-                    <img src="img/logo.png" style="width:100px; margin:30px 80px;"></img>
+                    <img src="img/logo.png" style="width:100px; margin:30px 80px;"/>
                 </ion-content>
           </ion-side-menu>
 
