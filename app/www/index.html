@@ -25,10 +25,19 @@
   <body ng-app="sambet">
 
     <!-- Basic Ionic layout -->
-    <div ng-controller="MainCtrl" ng-init="init()">
+    <div ng-controller="MainCtrl">
         <ion-nav-view></ion-nav-view>
     </div>
 
+    <script id="startView.html" type="text/ng-template">
+        <ion-view>
+            <ion-content>
+                <div ng-controller="startCtrl" style="text-align: center" ng-init="init()">
+                    <img src="img/logo.png" class="logo">
+                </div>
+            </ion-content>
+        </ion-view>
+    </script>
 
     <script id="intro.html" type="text/ng-template"> 
       <ion-view hide-back-button="true" >
@@ -69,7 +78,6 @@
             <p>
               - You&#x27;re awesome! -
             </p>
-              <p>{{data.deviceid}}</p>
           </ion-slide>
 
           <!-- Slide 2 -->

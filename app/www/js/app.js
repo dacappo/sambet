@@ -68,38 +68,46 @@ angular.module('sambet', ['ionic'])
       controller: 'IntroCtrl'
     })
 
+      .state('start', {
+          url: '/start',
+          templateUrl: 'startView.html',
+          controller: 'startCtrl'
+      })
 
-   $urlRouterProvider.otherwise("/dashboard");
+
+   $urlRouterProvider.otherwise("/start");
 
 })
 
+.controller('startCtrl', function($scope, $state)
+    {
+        $scope.init=function()
+        {
+            ionic.Platform.ready(function(){
+                var device = ionic.Platform.device();
+                var uuid = device.uuid;
+                $scope.data = { deviceid : uuid};
+                goForward(uuid);
+            });
+
+            function goForward(deviceID)
+            {
+                if(deviceID == "916cd04fd5a08dbe")
+                {
+                    $state.go('eventmenu.dashboard');
+                }
+                else
+                {
+                    $state.go('intro');
+                }
+            };
+
+
+        };
+    })
+
 .controller('MainCtrl', function($scope, $state, $ionicSideMenuDelegate)
 {
-    $scope.init=function()
-    {
-        ionic.Platform.ready(function(){
-            var device = ionic.Platform.device();
-            var uuid = device.uuid;
-            $scope.data = { deviceid : uuid};
-            goForward(uuid);
-        });
-
-        function goForward(deviceID)
-        {
-            if(deviceID == "916cd04fd5a08dbe")
-            {
-                $state.go('eventmenu.dashboard');
-            }
-            else
-            {
-                $state.go('intro');
-            }
-        };
-
-
-    };
-
-
   $scope.hideBackButton = !$scope.hideBackButton;
 
   $scope.toggleLeft = function()
