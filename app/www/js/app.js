@@ -64,7 +64,7 @@ angular.module('sambet', ['ionic'])
 
     .state('intro', {
       url: '/intro',
-      templateUrl: 'intro.html',
+      templateUrl: 'pages/intro.html',
       controller: 'IntroCtrl'
     })
 
