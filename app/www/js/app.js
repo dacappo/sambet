@@ -64,18 +64,18 @@ angular.module('sambet', ['ionic'])
 
     .state('intro', {
       url: '/intro',
-      templateUrl: 'pages/intro.html',
+      templateUrl: 'intro.html',
       controller: 'IntroCtrl'
     })
 
-      .state('start', {
-          url: '/start',
-          templateUrl: 'startView.html',
+      .state('init', {
+          url: '/init',
+          templateUrl: 'init.html',
           controller: 'startCtrl'
       })
 
 
-   $urlRouterProvider.otherwise("/start");
+   $urlRouterProvider.otherwise("/init");
 
 })
 
@@ -92,14 +92,16 @@ angular.module('sambet', ['ionic'])
 
             function goForward(deviceID)
             {
+              /*
                 if(deviceID == "916cd04fd5a08dbe")
                 {
                     $state.go('eventmenu.dashboard');
                 }
                 else
                 {
-                    $state.go('intro');
+                    $state.go('intr');
                 }
+                */
             };
 
 

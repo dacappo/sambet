@@ -1,0 +1,14 @@
+<ion-view title="Settings">
+    <ion-content padding="true">
+        <div class="list">
+            <div class="list-header"><h4>Change username</h4></div>
+            <label class="item">
+                <p>{{data.username}}</p>
+            </label>
+            <label class="item ">
+                <input type="text" placeholder="New username" ng-model="data.new_username">
+            </label>
+            <button class="item button button-light button-balanced button-block" ng-click="changeUsername()">Submit</button>
+        </div>
+    </ion-content>
+</ion-view>
