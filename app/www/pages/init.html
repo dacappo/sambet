@@ -1,7 +1,9 @@
 <ion-view>
-	<ion-content>
-        <div ng-controller="startCtrl" style="text-align: center" ng-init="init()">
-       		<img src="img/logo.png" class="logo start">
+	<ion-content scroll="false" data-tap-disabled="true">
+        <div class="inital_screen_bg">
+          <div class="logo_container" ng-click="goToIntro()">
+            <img src="img/logo.png" class="logo_init"></img>
+          </div>
         </div>
-    </ion-content>
+      </ion-content>
 </ion-view>
