@@ -126,6 +126,28 @@ a.item:hover {
   padding: 5px 10px;
 }
 
+.inital_screen_bg {
+  width: 100%;
+  height: 100%;
+  background: -webkit-radial-gradient(
+   center, 
+   circle farthest-corner, 
+   #BCF5A9 0%, 
+   #01DF01 100%
+  );
+}
+
+.logo_init {
+  width: 150px;
+}
+
+.logo_container {
+  margin: 0 auto;
+  width: 150px;
+  height:100%;
+  padding-top: 150px;
+}
+
 
 
 

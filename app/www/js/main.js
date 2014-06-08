@@ -119,7 +119,7 @@ angular.module('sambet', ['ionic'])
 
   $scope.data = { username : "Paxalu",
                   new_username : "",
-                  points : 9};
+                  points : 0};
 
   $scope.changeUsername = function() {
     $scope.data.username = $scope.data.new_username;
@@ -129,8 +129,6 @@ angular.module('sambet', ['ionic'])
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
-
-
 
   // Called to navigate to the main app
   $scope.startApp = function() {
