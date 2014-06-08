@@ -40,11 +40,15 @@ if (!global.hasOwnProperty('db')) {
         Sequelize: Sequelize,
         sequelize: sequelize,
         User:      sequelize.import(__dirname + '/user'),
-        Group:     sequelize.import(__dirname + '/group')
+        Group:     sequelize.import(__dirname + '/group'),
+        Groupmember: sequelize.import(__dirname + '/groupmember')
         // add your other models here
     }
 
     global.db.User.hasOne(global.db.Group, { foreignKey: 'created_by'});
+    global.db.User.hasMany(global.db.Groupmember, {foreignKey: 'user_id'});
+    global.db.Group.hasMany(global.db.Groupmember, {foreignKey: 'group_id'});
+
     /*
      Associations can be defined here. E.g. like this:
      global.db.User.hasMany(global.db.SomethingElse)
