@@ -23,6 +23,13 @@ exports.find = function(req, res , next){
         })
 }
 
+//Non API Function
+exports.findByID = function(id, callback){
+    db.Group.find({ where: { id: id} }).success(function(group) {
+        callback(group);
+    });
+};
+
 exports.create = function(req, res) {
     res.setHeader('Access-Control-Allow-Origin','*');
     User.findByID(req.header('created_by'), function(creator){

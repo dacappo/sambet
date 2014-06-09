@@ -6,11 +6,13 @@ var restify = require('restify');
 var logfmt = require("logfmt");
 var mysql = require('mysql'),
     routes  = require('./routes'),
-    user    = require('./routes/user')
-    group   = require('./routes/group')
-    , http    = require('http')
-    , path    = require('path')
-    , db      = require('./models')
+    user    = require('./routes/user'),
+    group   = require('./routes/group'),
+    groupmember   = require('./routes/groupmember'),
+    team    = require('./routes/team'),
+    http    = require('http'),
+    path    = require('path'),
+    db      = require('./models');
 
 var port = Number(process.env.PORT || 5000);
 var server = restify.createServer({
@@ -47,3 +49,12 @@ server.del({path: 'users/delete' , version: '0.0.1'} , user.delete);
 server.get({path: 'groups/find' , version : '0.0.1'} , group.find);
 server.post({path: 'groups/create' , version: '0.0.1'} , group.create);
 server.del({path: 'groups/delete' , version: '0.0.1'} , group.delete);
+
+//Groupmember Paths
+server.get({path: 'groupmembers/finduser' , version : '0.0.1'} , groupmember.findAllByUserId);
+server.get({path: 'groupmembers/findgroup' , version : '0.0.1'} , groupmember.findAllByGroupId);
+server.post({path: 'groupmembers/create' , version: '0.0.1'} , groupmember.create);
+server.del({path: 'groupmembers/delete' , version: '0.0.1'} , groupmember.delete);
+
+//Teams Paths
+server.get({path: 'teams/find' , version : '0.0.1'} , team.find);
