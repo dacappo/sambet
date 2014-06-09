@@ -29,7 +29,7 @@
 
             <!-- Slide 1 -->
             <ion-slide>
-                <ion-header-bar style="background-color:transparent; border-width:0px;">
+                <ion-header-bar class="myheader">
                   <h1 class="title" style="color:white;">Thank you for choosing Sambet!</h1>
                 </ion-header-bar>
 
@@ -46,14 +46,13 @@
 
             <!-- Slide 2 -->
             <ion-slide>
-                <ion-header-bar style="background-color:transparent; border-width:0px;">
+                <ion-header-bar class="myheader">
                   <h1 class="title" style="color:white;">The rules are as simple as</h1>
                 </ion-header-bar>
 
                 <img src="img/logo.png" class="logo">
 
                 <div class="mylist">
-                    <h5></h5>
                     <table>
                         <tr><td><i class="smallIcon icon ion-checkmark-round"></i> Tip</td><td>3 Points</td></tr>
                         <tr><td><i class="smallIcon icon ion-checkmark-round"></i> Goal difference</td><td>2 Points</td></tr>
@@ -64,15 +63,15 @@
 
             <!-- Slide 3 -->
             <ion-slide >
-                <ion-header-bar style="background-color:transparent; border-width:0px;">
+                <ion-header-bar class="myheader">
                   <h1 class="title" style="color:white;">Set a username and get started!</h1>
                 </ion-header-bar>
-                
-                <input class="myinput" type="text" placeholder="New username" ng-model="data.new_username">
-                    
-                <div class="padding">
+                <div class="myinput">
+                <input class="myinputfieled" type="text" placeholder="New username" ng-model="data.new_username">
+                </div>    
+                <div class="padding" style="margin-top:20px;">
                     <a class="mybutton"  ng-click="signIn(user)">
-                      <i class="smallIcon icon ion-play"></i>Get started
+                      Get started
                     </a>
                 </div>
             </ion-slide>

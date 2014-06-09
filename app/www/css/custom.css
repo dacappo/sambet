@@ -118,7 +118,7 @@ a.item:hover {
   margin-top: 20px;
 }
 .mylist td {
-  text-align: center;
+  text-align: left;
   padding: 3px 10px;
 }
 
@@ -149,13 +149,16 @@ a.item:hover {
   color: #222;
   border-radius: 10px;
   margin: 0px auto;
-  padding-top: 25px;
-  padding-right: 15px;
-  padding-left: 15px;
-  padding-bottom: 5px;
+  padding: 10px;
 }
 
-.myinput:focus {
+.myinput_field {
+  background-color: white;
+  color: #222;
+  padding: 5px;
+}
+
+.myinput_field:focus {
   color:#222;
 }
 
@@ -177,6 +180,10 @@ a.item:hover {
   color: white;
 }
 
+.myheader {
+  background-image: none;
+  background-color:transparent;
+}
 
 
 
