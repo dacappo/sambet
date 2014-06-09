@@ -1,13 +1,15 @@
 
 
     <ion-view hide-back-button="true" >
-        <!-- Nav bar -->
+        <div class="inital_screen_bg">
+
+        <!-- Nav bar --><!-- 
         <ion-nav-bar class="nav-title-slide-ios7 bar-light intro_nav_bar">
             <ion-nav-back-button class="button-icon ion-arrow-left-c">
             </ion-nav-back-button>
         </ion-nav-bar>
 
-
+        <!--
         <ion-nav-buttons side="left">
             <button class="button button-balanced button-clear no-animation" ng-click="previous()" ng-if="slideIndex > 0">
                 Previous Slide
@@ -22,14 +24,16 @@
                 Start using MyApp
             </button>
         </ion-nav-buttons>
-
-        <ion-slide-box on-slide-changed="slideChanged(index)">
+    -->
+        <ion-slide-box on-slide-changed="slideChanged(index)" class="inital_screen_bg">
 
             <!-- Slide 1 -->
             <ion-slide>
-                <h3>Thank you for choosing Sambet!</h3>
+                <ion-header-bar style="background-color:transparent; border-width:0px;">
+                  <h1 class="title" style="color:white;">Thank you for choosing Sambet!</h1>
+                </ion-header-bar>
 
-                <img src="../img/logo.png" class="logo">
+                <img src="img/logo.png" class="logo">
 
                 <p>
                     We hope you&#x27;ll have fun with our app!
@@ -42,32 +46,36 @@
 
             <!-- Slide 2 -->
             <ion-slide>
+                <ion-header-bar style="background-color:transparent; border-width:0px;">
+                  <h1 class="title" style="color:white;">The rules are as simple as</h1>
+                </ion-header-bar>
 
-                <img src="../img/logo.png" class="logo">
+                <img src="img/logo.png" class="logo">
 
-                <h3>The rules are as simple as</h3>
-
-                <div id="list">
+                <div class="mylist">
                     <h5></h5>
                     <table>
-                        <tr><td>Correct tip</td><td>3 Points</td></tr>
-                        <tr><td>Correct goal difference</td><td>2 Points</td></tr>
-                        <tr><td>Correct tendency</td><td>1 Point</td></tr>
+                        <tr><td><i class="smallIcon icon ion-checkmark-round"></i> Tip</td><td>3 Points</td></tr>
+                        <tr><td><i class="smallIcon icon ion-checkmark-round"></i> Goal difference</td><td>2 Points</td></tr>
+                        <tr><td><i class="smallIcon icon ion-checkmark-round"></i> Tendency</td><td>1 Point</td></tr>
                     </table>
                 </div>
             </ion-slide>
 
             <!-- Slide 3 -->
             <ion-slide >
-                <h3>Set a username and get started!</h3>
-                <div class="list" padding="true">
-
-                    <label class="item ">
-                        <input type="text" placeholder="New username" ng-model="data.new_username">
-                    </label>
-                    <button class="item button button-light button-balanced button-block" ng-click="startApp()">Get started</button>
-
+                <ion-header-bar style="background-color:transparent; border-width:0px;">
+                  <h1 class="title" style="color:white;">Set a username and get started!</h1>
+                </ion-header-bar>
+                
+                <input class="myinput" type="text" placeholder="New username" ng-model="data.new_username">
+                    
+                <div class="padding">
+                    <a class="mybutton"  ng-click="signIn(user)">
+                      <i class="smallIcon icon ion-play"></i>Get started
+                    </a>
                 </div>
             </ion-slide>
         </ion-slide-box>
+    </div>
     </ion-view>
