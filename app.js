@@ -9,6 +9,7 @@ var mysql = require('mysql'),
     user    = require('./routes/user'),
     group   = require('./routes/group'),
     groupmember   = require('./routes/groupmember'),
+    team    = require('./routes/team'),
     http    = require('http'),
     path    = require('path'),
     db      = require('./models');
@@ -50,6 +51,7 @@ server.post({path: 'groups/create' , version: '0.0.1'} , group.create);
 server.del({path: 'groups/delete' , version: '0.0.1'} , group.delete);
 
 //Groupmember Paths
-server.get({path: 'groupmembers/find' , version : '0.0.1'} , groupmember.findAllByUserId);
+server.get({path: 'groupmembers/finduser' , version : '0.0.1'} , groupmember.findAllByUserId);
+server.get({path: 'groupmembers/findgroup' , version : '0.0.1'} , groupmember.findAllByGroupId);
 server.post({path: 'groupmembers/create' , version: '0.0.1'} , groupmember.create);
 server.del({path: 'groupmembers/delete' , version: '0.0.1'} , groupmember.delete);

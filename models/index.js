@@ -41,7 +41,8 @@ if (!global.hasOwnProperty('db')) {
         sequelize: sequelize,
         User:      sequelize.import(__dirname + '/user'),
         Group:     sequelize.import(__dirname + '/group'),
-        Groupmember: sequelize.import(__dirname + '/groupmember')
+        Groupmember: sequelize.import(__dirname + '/groupmember'),
+        Team:      sequelize.import(__dirname + '/team')
         // add your other models here
     }
 

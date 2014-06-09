@@ -12,18 +12,35 @@ exports.findAllByUserId = function(req, res , next){
     res.setHeader('Access-Control-Allow-Origin','*');
     User.findByID(req.header('user_id'), function(user){
         db.Groupmember
-            .find({ where: { user_id: user.id} })
-            .complete(function(err, groupmember) {
+            .findAll({ where: { user_id: user.id} })
+            .complete(function(err, groupmembers) {
                 if (!!err) {
                     console.log('An error occurred while searching for the groupmember:', err)
                     res.send("An error occurred", err);
-                } else if (!groupmember) {
+                } else if (!groupmembers) {
                     console.log('No groupmember has been found.')
                     res.send("No groupmember has been found.");
                 } else {
-                    console.log('Found groupmember' + groupmember.name)
-                    console.log('Attributes:', groupmember.id)
-                    res.send({groupmember: groupmember});
+                    res.send({groupmembers: groupmembers});
+                }
+            })
+    });
+}
+
+exports.findAllByGroupId = function(req, res , next){
+    res.setHeader('Access-Control-Allow-Origin','*');
+    User.findByID(req.header('group_id'), function(group){
+        db.Groupmember
+            .findAll({ where: { group_id: group.id} })
+            .complete(function(err, groupmembers) {
+                if (!!err) {
+                    console.log('An error occurred while searching for the groupmember:', err)
+                    res.send("An error occurred", err);
+                } else if (!groupmembers) {
+                    console.log('No groupmember has been found.')
+                    res.send("No groupmember has been found.");
+                } else {
+                    res.send({groupmembers: groupmembers});
                 }
             })
     });
