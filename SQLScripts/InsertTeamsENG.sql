@@ -1,4 +1,4 @@
-INSERT INTO `local_db`.`teams`
+INSERT INTO `teams`
 (`id`,
 `name`,
 `createdAt`,

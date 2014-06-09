@@ -32,7 +32,7 @@ if (!global.hasOwnProperty('db')) {
             })
     } else {
         // the application is executed on the local machine ... use mysql
-        console.log('Local Database not supported')
+        console.log('Using Local Database')
         sequelize = new Sequelize('local_db', 'root', 'public')
     }
 
