@@ -43,7 +43,7 @@ exports.create = function(req, res) {
                     res.send({message: "error"});
                 } else {
                     console.log('We have a persisted instance now')
-                    creator.setGroup(group).success(function(){
+                    creator.setGroups([group]).success(function(){
                         console.log("Successfully linked group to user")
                     });
                     res.send({message: "group created!"});

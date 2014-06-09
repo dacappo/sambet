@@ -46,9 +46,12 @@ if (!global.hasOwnProperty('db')) {
         // add your other models here
     }
 
-    global.db.User.hasOne(global.db.Group, { foreignKey: 'created_by'});
-    global.db.User.hasMany(global.db.Groupmember, {foreignKey: 'user_id'});
-    global.db.Group.hasMany(global.db.Groupmember, {foreignKey: 'group_id'});
+    global.db.User.hasMany(global.db.Group);   //, { foreignKey: 'created_by'}
+    global.db.Group.belongsTo(global.db.User);
+    global.db.User.hasMany(global.db.Groupmember); //, {foreignKey: 'user_id'}
+    global.db.Groupmember.belongsTo(global.db.User);
+    global.db.Group.hasMany(global.db.Groupmember); //, {foreignKey: 'group_id'}
+    global.db.Groupmember.belongsTo(global.db.Group);
 
     /*
      Associations can be defined here. E.g. like this:
